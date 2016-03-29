@@ -10,12 +10,16 @@ def hello_world():
 
 @app.route('/report')
 def report():
+    """Clients call /report?client=theID&status=connectivitycheck
+        We should return the search string so the client can begin
+        computing addresses for us.
+    """
     client_id = request.args.get('client')
     status = request.args.get('status')
     print('called by client: ' + client_id)
     print('status is: ' + status)
-    print('returning search pattern: ')
-    return SEARCH_PATTERN
+    print('returning search pattern: ' + SEARCH_PATTERN)
+    return json.dumps({"search_pattern":SEARCH_PATTERN})
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
