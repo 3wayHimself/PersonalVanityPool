@@ -14,11 +14,14 @@ Use the tools in this repo to make a cloud/pool of computers, stopping only when
 ## Usage
 Step 1: As the admin/host computer you'll need to make sure the Flask server is running so you're listening for the reports from the clients. I had to setup port forwarding on my router, and I use the dynamic dns updating feature to make sure my domain will always reach my server. Find Flask tutorials, it's very simple.
 
-Step 2: Setup your client config, choose your vanity address in the TODO: add dedicated config file. Remember addresses must start with 1, and it doesn't make sense to try making a vanity address with too many characters. Don't be rude and make a bunch of friends and family search day and night for an addreess that can't be found for hundreds of years, so go figure out vanitygen
+Step 2: Setup your client config, choose your vanity address in the TODO: add dedicated config file. Remember addresses must start with 1, and it doesn't make sense to try making a vanity address with too many characters. Don't be rude and make a bunch of friends and family search day and night for an address that can't be found for hundreds of years, so go figure out vanitygen
 I use 64bit because it's quite a bit faster. Change this according to the rate of your client's CPU.
 TODO: Add a dedicated config file
 
 Step 3: TODO
+
+##FAQs
+Why does the .
 
 </content>
 </snippet>
