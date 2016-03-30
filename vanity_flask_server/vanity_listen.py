@@ -18,8 +18,19 @@ def report():
     status = request.args.get('status')
     print('called by client: ' + client_id)
     print('status is: ' + status)
+
+    if status == 'found':
+        print('PRIVATE KEY FOUND!')
+        pattern = request.args.get('pattern')
+        address = request.args.get('address')
+        privkey = request.args.get('privkey')
+        print(pattern)
+        print(address)
+        print(privkey)
+
     print('returning search pattern: ' + SEARCH_PATTERN)
     return json.dumps({"search_pattern":SEARCH_PATTERN})
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000)
