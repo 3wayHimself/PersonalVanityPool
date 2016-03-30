@@ -2,11 +2,12 @@ from flask import Flask, request
 import json
 app = Flask(__name__)
 
-SEARCH_PATTERN = "1" + "AJWEST1" #must start with 1
+SEARCH_PATTERN = "1AJWEST1" #must start with 1
 
 @app.route('/')
 def hello_world():
-    return 'Hello World!'
+    return "str"
+
 
 @app.route('/report')
 def report():
@@ -29,7 +30,7 @@ def report():
         print(privkey)
 
     print('returning search pattern: ' + SEARCH_PATTERN)
-    return json.dumps({"search_pattern":SEARCH_PATTERN})
+    return SEARCH_PATTERN
 
 
 if __name__ == '__main__':
