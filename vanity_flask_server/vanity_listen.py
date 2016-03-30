@@ -14,16 +14,16 @@ def report():
         We should return the search string so the client can begin
         computing addresses for us.
     """
-    client_id = request.args.get('client')
-    status = request.args.get('status')
+    client_id = request.args.get('client', '')
+    status = request.args.get('status', '')
     print('called by client: ' + client_id)
     print('status is: ' + status)
 
     if status == 'found':
         print('PRIVATE KEY FOUND!')
-        pattern = request.args.get('pattern')
-        address = request.args.get('address')
-        privkey = request.args.get('privkey')
+        pattern = request.args.get('pattern', '')
+        address = request.args.get('address', '')
+        privkey = request.args.get('privkey', '')
         print(pattern)
         print(address)
         print(privkey)
