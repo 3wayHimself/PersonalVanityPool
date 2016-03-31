@@ -2,7 +2,7 @@
  <content>
 
 ##Personal Vanity Pool
-PersonalVanityPool is a fork of Vanitygen, a command line tool for creating vanity bitcoin addresses, now available to deploy on multiple computers for a 'personal pool.'
+PersonalVanityPool is a fork of Vanitygen, a command line tool for creating vanity bitcoin addresses, adapted and made available to deploy on multiple computers for a 'personal pool.'
 
 **The adaptation is currently in progress, this repo is not useful yet!**
 
@@ -35,8 +35,10 @@ A: Correct. The idea is to use as many computers as possible to roll these metap
 Q: What happ
 
 ##FAQs for the server
-TODO
+Q:
 
+
+Limitations: Since this software was meant to be used on a lan or with trusted friends,  I have the ability to tell my client computers when to stop trying to find a solution because another client has found it. The client will not be able to know whether or not another client has already found the solution unless it has been restarted (causes no harm to restart manually by closing and reopening the script). I am working on a way to have the clients poll the server, but for now the best we can do is prevent new people from starting to do the computation. As a workaround, you could restart the script on the client somehow as a frequently as you feel you should check to see if another client has found the solution.
 
 </content>
 </snippet>

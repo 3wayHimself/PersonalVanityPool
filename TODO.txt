@@ -1,0 +1,13 @@
+Adams-Apple:vanitygen awest$ keyconv -G
+Pubkey (hex): 04f9941b5f45972e0413f84f5c0ed86d66c68490bb16df98df23703917dd807d17037f74a5b02d18bdaeaf5f9291aae9009bbae94f317939815a05360776b36480
+Privkey (hex): 2C2DED649032BABFF37962233704994FE96980E5D11E030C2C9170E1B975A88C
+Address: 1FWLCUKtxAgRWdnk9M1ck5cDQigdkZLRw7
+Privkey: 5J9k5tTWZ3RMSjEqaFdkFkqeaacTVaZ2mqTFDN8zTet9anGfCtm
+Adams-Apple:vanitygen awest$ vanitygen -P 04f9941b5f45972e0413f84f5c0ed86d66c68490bb16df98df23703917dd807d17037f74a5b02d18bdaeaf5f9291aae9009bbae94f317939815a05360776b36480 1AJ
+Difficulty: 1330
+Pattern: 1AJ                                                                   
+Address: 1AJUEM7KJVCuaztPBxunbA6CMdEr7pvTYp
+PrivkeyPart: 5JQ99sgTz7FKxhDQJWLKZwhrQbPmKuTpLtyubzNqepaqq388NMZ
+Adams-Apple:vanitygen awest$ keyconv -c 5J9k5tTWZ3RMSjEqaFdkFkqeaacTVaZ2mqTFDN8zTet9anGfCtm 5JQ99sgTz7FKxhDQJWLKZwhrQbPmKuTpLtyubzNqepaqq388NMZ
+Address: 1AJUEM7KJVCuaztPBxunbA6CMdEr7pvTYp
+Privkey: 5Jjbf5gtTh6h9R4xqZXAjeoNmaBJcM9mPvNNbBU5sbcMFEfs4Bn
