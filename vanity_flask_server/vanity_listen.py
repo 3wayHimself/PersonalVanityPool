@@ -43,12 +43,10 @@ def report():
     Combine the private key with the private key you used to generate the PUBLIC_KEY"""
 
     print('PRIVATE KEY FOUND!')
-    pattern = request.args.get('pattern', '')
-    address = request.args.get('address', '')
-    privkey = request.args.get('privkey', '')
-    print(pattern)
-    print(address)
-    print(privkey)
+    type = request.args.get('type', '')
+    key = request.args.get('key', '')
+    print(type)
+    print(key)
     return "YOU FOUND THE ADDRESS! THANK YOU SO MUCH!"
 
 
