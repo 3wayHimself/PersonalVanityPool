@@ -2,12 +2,15 @@ from flask import Flask, request
 import json
 app = Flask(__name__)
 
-SEARCH_PATTERN = "1AJW" #must start with 1
-PUBLIC_KEY = "049106abce7220c8b064db7485977022bfcccf7998ba9a94f984c17b3517e660462fa6c4928b4462393ec4fd6a9d5e6483fc6ec8654810120ccae4e140fb172330" #for creating split private keys for securely computing on untrusted computers/sending over network
+# Place your search pattern here, it must START with a 1 otherwise you'll be searching forever
+SEARCH_PATTERN = "1AJW"  #eg "1CANADA"
+# Place your public key (hex) here. This is needed for securely computing on untrusted computers
+# and is needed even on trusted computers because they will be sending the results over the internet without SSL.
+PUBLIC_KEY = "we"
 
 @app.route('/')
 def hello_world():
-    return "your connection is working. call /report then /private_key and /report when you've found it."
+    return "your connection is working. call /pattern then /private_key, and /report when you've found it."
 
 
 @app.route('/pattern')
@@ -20,17 +23,19 @@ def pattern():
     status = request.args.get('status', '')
     print('called by client: ' + client_id)
 
-
-    print('returning search pattern: ' + SEARCH_PATTERN)
-    return SEARCH_PATTERN
+    # Just double check to make sure the pattern starts with a 1
+    if SEARCH_PATTERN.startswith("1"):
+        print('returning search pattern: ' + SEARCH_PATTERN)
+        return SEARCH_PATTERN
+    else:
+        print('ABORTING SEARCH: search pattern ' + SEARCH_PATTERN + ' does not begin with 1')
+        return "ABORT"
 
 @app.route('/public_key')
 def public_key():
     """If you are sending the app to friends, you're going to want to generate a public key
     so your data is encrypted. Otherwise you're basically sending plaintext keys over insecure networks,
-    plus the client computers all potentially have a copy of the keys. TODO: Explain split key pairs."""
-    client_id = request.args.get('client', '')
-    status = request.args.get('status', '')
+    plus the client computers all potentially have a copy of the keys."""
     search_pattern = request.args.get('search_pattern', '')
     if search_pattern:
         print(search_pattern)
