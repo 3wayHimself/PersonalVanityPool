@@ -4,6 +4,7 @@ ECHO "Trying to connect to the internet, please allow any firewall popup."
 ::Here we call the flask server host to get the desired search pattern to compute.
 for /f "delims=" %%i in ('CALL "./dependencies/curl/curl" "http://ajwest.dyndns.org:5001/pattern"') do set search_pattern=%%i
 ::Then right away we make another call to get the public key from the server. This key is used for split-key cryptography
+:: Calls are made one after another instead of something like json for simplicity (it's complex to decode json into variables in batch)
 for /f "delims=" %%i in ('CALL "./dependencies/curl/curl" "http://ajwest.dyndns.org:5001/public_key"') do set public_key=%%i
 
 ECHO Search pattern from server: %search_pattern%

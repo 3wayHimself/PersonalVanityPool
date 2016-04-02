@@ -3,10 +3,10 @@ import json
 app = Flask(__name__)
 
 # Place your search pattern here, it must START with a 1 otherwise you'll be searching forever
-SEARCH_PATTERN = "1AJW"  #eg "1CANADA"
+SEARCH_PATTERN = "1AJW"  #eg "1CANADA" (all vanity addresses start with a 1)
 # Place your public key (hex) here. This is needed for securely computing on untrusted computers
-# and is needed even on trusted computers because they will be sending the results over the internet without SSL.
-PUBLIC_KEY = "we"
+PUBLIC_KEY = "PLACEYOURPUBLICKEYHERE"
+USE_SPLIT_KEY = False #If you are setting this to False, you are crazy. Read the README on split-key address generation.
 
 @app.route('/')
 def hello_world():
@@ -38,9 +38,17 @@ def public_key():
     plus the client computers all potentially have a copy of the keys."""
     search_pattern = request.args.get('search_pattern', '')
     if search_pattern:
+        #you could use this section to set a different public key for different pools, but we only support
+        #searching for one address at a time for now.
         print(search_pattern)
-    print('returning public key: ' + PUBLIC_KEY)
-    return PUBLIC_KEY
+
+    if USE_SPLIT_KEY:
+        print('returning public key: ' + PUBLIC_KEY)
+        return PUBLIC_KEY
+    else:
+        print('not using public key, this must be a very secure client')
+        print('returning OFF to indicate no use of this feature to the client')
+        return "OFF"
 
 @app.route('/report')
 def report():
