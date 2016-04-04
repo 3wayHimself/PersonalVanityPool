@@ -5,8 +5,8 @@ app = Flask(__name__)
 # Place your search pattern here, it must START with a 1 otherwise you'll be searching forever
 SEARCH_PATTERN = "1AJW"  #eg "1CANADA" (all vanity addresses start with a 1)
 # Place your public key (hex) here. This is needed for securely computing on untrusted computers
-PUBLIC_KEY = "PLACEYOURPUBLICKEYHERE"
-USE_SPLIT_KEY = False #If you are setting this to False, you are crazy. Read the README on split-key address generation.
+PUBLIC_KEY = "YOURPUBLICKEYHERE"
+USE_SPLIT_KEY = True #If you are setting this to False, you are crazy. Read the README on split-key address generation.
 
 @app.route('/')
 def hello_world():

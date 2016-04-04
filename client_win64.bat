@@ -24,7 +24,7 @@ ECHO the server. Thank you for you service.
 ECHO WARNING: ENSURE YOUR FANS ARE NOT OBSTRUCTED! App creates heat and uses power, sorry.
 ECHO Below shows our chances to have stumbled upon a solution:
 if "%public_key%"=="OFF" CALL "./vanitygen/vanitygen64.exe" -o "save.txt" "%search_pattern%"
-else CALL "./vanitygen/vanitygen64.exe" -o "save.txt" -P %public_key% "%search_pattern%"
+if not "%public_key%"=="OFF" CALL "./vanitygen/vanitygen64.exe" -o "save.txt" -P %public_key% "%search_pattern%"
 
     for /f "tokens=1*" %%a in (save.txt) do (
         echo %%a %%b
