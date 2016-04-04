@@ -48,7 +48,9 @@ Privkey: 5JxwKZDekChpnwk5DoAZQPcHRohDxZBQ6NYq6QUX2xUcvbmxb1Z
 
 3. Modify the `server_url` variable in your `client_win64.bat` and/or `client_mac.sh` scripts in preparation to be sent to your client computers.
 
-
+4. Run the Flask server to begin listening for clients. The client software will soon be making calls to ask for:
+- The search pattern (the vanity address prefix you're looking to find)
+-
 
 ####Client computers - Quickstart for Windows 64-bit clients
 1. Make sure the host Flask server is running on the host computer and listening for calls from the client computers. Test this by going to the URL in your web browser.
@@ -91,8 +93,9 @@ A: Correct. The idea is to use as many computers as possible to roll these metap
 
 ##Limitations:
 
-- The client will not be able to know whether or not another client has already found the solution unless it has been restarted (causes no harm to restart manually by closing and reopening the script). A future release will have clients periodically poll the server to see if the search should indeed continue, but for now the best we can do is prevent new people from starting to do the computation. As a workaround, you could restart the script on the client as frequently as you feel you should check to see if another client has found the solution, or simply turn off the client script manually on all devices in your pool after you've finished searching.
-- Vanitygen is using the client's CPU and is slow in comparison to the GPU version of the software olcvanitygen. In a future release, Personal Vanity Pool will attempt to choose the most appropriate hardware and vanitygen version.
+- The client will not be able to know when another client has found the solution unless it has been restarted (causes no harm to restart manually by closing and reopening the script). A future release will have clients periodically poll the server to see if the search should indeed continue, but for now the best we can do is prevent new people from starting to do the computation. As a workaround, you could restart the script on the client as frequently as you feel you should check to see if another client has found the solution, or simply turn off the client script manually on all devices in your pool after you've finished searching.
+- Vanitygen is using the client's CPU and is slow in comparison to the GPU version of the software olcvanitygen. In a future release, Personal Vanity Pool will attempt to choose the most appropriate hardware and Vanitygen version.
+- Only vanity addresses search patterns as prefixes are currently supported. An update to allow regex searches for patterns anywhere in an address is on the list for development.
 
 </content>
 </snippet>
