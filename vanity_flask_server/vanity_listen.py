@@ -62,6 +62,22 @@ def report():
     print(key)
     return "YOU FOUND THE ADDRESS! THANK YOU SO MUCH!"
 
+@app.route('/getWork')
+def getWork():
+    return "1BAWE:04C13D9CF2B0E382A4AF29C5E2B97F85C6DD9445F7DCE82CD7207E6FC4716511981B0012C10B39EF152257A8407A2965F92F075379D311D5786D9421795B82D01C:0:0.112000;\n"
+
+@app.route('/solve')
+def solve():
+    key = request.args.get('key', '')
+    privateKey = request.args.get('privateKey', '')
+    bitcoinAddress = request.args.get('bitcoinAddress', '')
+    print('client claims to have solved')
+    print(key)
+    print(privateKey)
+    print(bitcoinAddress)
+
+    return ""
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5001)
