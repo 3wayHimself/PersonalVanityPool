@@ -12,6 +12,12 @@ for /f "delims=" %%i in ('CALL "./dependencies/curl/curl" "%server_url%public_ke
 ECHO Server: %server_url%
 ECHO Search pattern from server: %search_pattern%
 ECHO Public key from server: "%public_key%"
+IF not "%search_pattern:~0,1%"=="1" (
+echo & echo.FAILED TO START. Probably a connectivity problem, or the server isn't running, or you have an invalid search pattern!
+PAUSE
+EXIT /B)
+IF "%search_pattern:~0,1%"=="1" echo & echo.Connectivity check passed, search pattern check valid (begins with 1).
+
 ECHO & echo.& echo.& echo.& echo. This computer is currently computing an intense process.& echo.& echo.& echo.
 ECHO Please wait.... we need your help computing a math probability problem.& echo.& echo.& echo.
 ECHO If you've been given this program to run, it's probably because
